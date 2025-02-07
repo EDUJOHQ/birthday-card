@@ -21,19 +21,29 @@
       object-fit: cover;
       z-index: -1;
     }
+
+    /* Cambiar el video de fondo en pantallas móviles */
     @media (max-width: 767px) {
-    .regalo {
+      #video-background {
+        content: url('fondolukha-mobile.mp4'); /* Cambiar al video móvil */
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      .regalo {
         margin-top: 30px; /* Menos margen en pantallas pequeñas */
+      }
     }
-}
   </style>
 </head>
 <body>
 <!-- Video de fondo -->
 <video id="video-background" autoplay muted loop>
-  <source src="fondolukha.mp4" type="video/mp4">
+  <source src="fondolukha.mp4" type="video/mp4"> <!-- Video para escritorio -->
   Tu navegador no soporta el formato de video MP4.
 </video>
+
 <div class="sonido" onload="playAudio()"></div>
 <div class="container mt-5">
   <div class="row">
@@ -69,7 +79,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- Agrega los scripts de Bootstrap y jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
