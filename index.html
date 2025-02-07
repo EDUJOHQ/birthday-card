@@ -3,17 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Regalo para Danita <3</title>
+  <title>Regalo para Lukha <3</title>
   <!-- Agrega la hoja de estilo de Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     .regalo {
       cursor: pointer;
+      margin-top: 120px;
     }
+    /* Fondo de video a pantalla completa */
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    @media (max-width: 767px) {
+    .regalo {
+        margin-top: 30px; /* Menos margen en pantallas pequeñas */
+    }
+}
   </style>
 </head>
-<body style="background-color: #bcc7cb;">
-
+<body>
+<!-- Video de fondo -->
+<video id="video-background" autoplay muted loop>
+  <source src="fondolukha.mp4" type="video/mp4">
+  Tu navegador no soporta el formato de video MP4.
+</video>
+<div class="sonido" onload="playAudio()"></div>
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-6 offset-md-3 text-center">
@@ -31,14 +52,24 @@
         <!-- Div para el contenido del regalo -->
         <div class="card mt-3 mb-3" id="contenido" style="display: none;">
             <div class="card-body">
-                <h5 class="card-title">¡Feliz cumpleaños!</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae consectetur animi perferendis exercitationem voluptatum, quo magni est a sint nisi et itaque quas illo aliquid mollitia temporibus distinctio reiciendis aspernatur?</p>
-                <img src="flork.png" class="img-fluid" width="200">
+                <h5 class="card-title">
+                  🎂🎉¡Feliz cumpleaños, sobrino!🎂🎉
+                </h5>
+                <p></p>
+                <p class="card-text">
+                  Espero que este detallito te saque una sonrisa 😊 
+                  y que lo disfrutes muchísimo. 🎁🎈 <br>Cuidate mucho y
+                  recuerda que hoy es tu día, ¡así que disfrútalo al máximo! 🌟💥<br>
+                  Y ojo con estar "trolleando" las partidas de Brawl Stars 😜, ¡a ver si algún día jugamos juntos y me enseñas tus trucos! 😂🎮 ¡Te va a tocar hacer un equipo de verdad! 😎
+                  <br>Un fuerte abrazo a la distancia sobrino, ¡que tengas un día increíble! 🥳🎉
+                </p>
+                <img src="figura1.png" class="img-fluid" width="200">
             </div>
         </div>
     </div>
   </div>
 </div>
+
 
 <!-- Agrega los scripts de Bootstrap y jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
