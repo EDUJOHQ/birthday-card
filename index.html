@@ -22,15 +22,7 @@
       z-index: -1;
     }
 
-    /* Cambiar el video de fondo en pantallas móviles */
-    @media (max-width: 500px) {
-      #video-background {
-        content: url('fondolukha-mobile.mp4'); /* Cambiar al video móvil */
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-
+    @media (max-width: 767px) {
       .regalo {
         margin-top: 30px; /* Menos margen en pantallas pequeñas */
       }
@@ -40,7 +32,8 @@
 <body>
 <!-- Video de fondo -->
 <video id="video-background" autoplay muted loop>
-  <source src="fondolukha.mp4" type="video/mp4"> <!-- Video para escritorio -->
+  <source id="video-desktop" src="fondolukha.mp4" type="video/mp4"> <!-- Video para escritorio -->
+  <source id="video-mobile" src="fondolukha-mobile.mp4" type="video/mp4"> <!-- Video para móvil -->
   Tu navegador no soporta el formato de video MP4.
 </video>
 
@@ -94,7 +87,20 @@
             spread: 60
         });
     };
+
+    // Cambiar video de fondo dependiendo del tamaño de la pantalla
+    function checkDevice() {
+        if (window.innerWidth <= 767) {
+            document.getElementById('video-background').src = document.getElementById('video-mobile').src;
+        } else {
+            document.getElementById('video-background').src = document.getElementById('video-desktop').src;
+        }
+    }
+
+    window.onload = checkDevice;
+    window.onresize = checkDevice;
 </script>
+
 <script>
     function playAudio() {
         // Obtén el elemento de audio
@@ -106,6 +112,6 @@
         $("#regalo").toggle();
         $("#regaloAb").toggle();
     }
-  </script>
+</script>
 </body>
 </html>
